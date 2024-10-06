@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+<link rel="stylesheet" href="spinner.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --smallT: 16px;
+            --midT: 25px;
+            --largeT: 30px;
+            --Dcolor: rgb(4, 134, 129);
+            --Lcolor: rgb(100, 184, 181);
+            --Hovcolor: rgb(16, 196, 190);
+
+        }
+        body{
+            background-color: var(--Dcolor);
+        }
+
+        nav {
+            width: 100%;
+            padding: 20px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: var(--Dcolor);
+        }
+            /* .navbar{
+                width: 100%;
+            } */
+        .heading{
+            width: max-content;
+            font-size: var(--largeT);
+        }
+        .ul{
+            
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+
+        }
+        .li{
+            padding: 10px 20px;
+        }
+        
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: var(--midT);
+        }
+        .li:hover, .dropdown-content{
+            background-color:var(--Hovcolor);
+        }
+        
+        .dropdown-items a, .dropdown-items input{
+            font-size: var(--smallTT);
+            font-weight: 500;
+            font-family:  sans-serif;
+            cursor: pointer;
+
+        }
+
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            /* background-color: forestgreen; */
+            min-width: 160px;
+            margin: 10px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-items {
+           margin: 10px;
+            padding: 10px ;
+            color: black;
+            padding: 12px 16px;
+            font-size: var(--smallT);
+            text-decoration: none;
+cursor: pointer;
+
+            display: block;
+            clear: both;
+            text-align: center;
+        }
+
+        .dropdown-items:hover{
+            background-color: white;
+        }
+
+        #dropdown:hover .dropdown-content {
+            content: "";
+            transform: translateX(10deg);
+            display: block;
+        }
+
+        
+label{
+    display: flex;
+    align-items: center;
+column-gap: 30px;
+}
+.label{
+    padding-top: 20px;
+}
+.label p{
+    font-size: var(--midT);
+}
+
+        .form {
+            width: 100%;
+            height: 100%;
+            /* height: max-content; */
+            display: flex;
+            flex-direction:column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+
+        }
+
+        .heading {
+            width: 100hw;
+            font-size: var(--largeT);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .field {
+            width: max-content;
+            
+            align-self: center;
+            justify-self: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--Lcolor);
+            border-radius: 10px;
+            /* padding: 20px; */
+            gap: 20px;
+
+        }
+
+        input[type=email],
+        input[type=text],
+        input[type=number],
+        input[type=password],
+        input[type=file]
+         {
+            display: block;
+font-size: var(--midT);
+            margin: 10px;
+            padding: 10px 50px;
+            border: 1px solid lightgray;
+
+            /* border-color: lightgray; */
+        }
+
+        input[type=submit] {
+            
+            font-size: var(--midT);
+            width: 150px;
+            height: 40px;
+            margin: 20px;
+
+            border: none;
+            background-color: rgb(146, 239, 239);
+            border-radius: 10px;
+
+        }
+        input[type=submit] :hover{
+            box-shadow: 1px 1px 10px 1px black;
+            background-color: aliceblue;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="loading"></div>
+    <div class="main">
+
+        <nav class="header">
+            <div class="heading">
+                <h1>Crafty Bags</h1>
+            </div>
+
+
+
+            <ul class="ul">
+                <li class="li"><a class="a" href="index.html">Home</a></li>
+                <li id="dropdown" class="li"><a class="a" href="#">Category</a>
+                
+                    <ul class="dropdown-content">
+                        
+                        <div class="dropdown-items">
+<input type="submit" id="pearl-bags" value="Pearl bags">
+                        </div>
+                        <div class="dropdown-items">
+                            <input type="submit" id="crystal-bags"  value="Crystal bags">
+                        </div>
+                    </ul>
+                </li>
+                <li class="li" id="ap"><a class="a" href="#">AddProduct</a></li>
+                <li class="li" id="dropdown"> <a class="a" href=" ">Contact</a>
+                    <ul class="dropdown-content">
+                        <div class="dropdown-items">
+                            <a href="https://wa.me/+923130306029">Whatsapp</a>
+                        </div>
+                        <div class="dropdown-items">
+                            <a href="mailto:ayeshrf@gmail.com">Email</a>
+                        </div>
+                    </ul>
+                </li>
+
+                <li id="dropdown" class="li"><a class="a" href="#"><i class="fa-regular fa-user"></i></a>
+
+                    <ul class="dropdown-content">
+                        <div class="dropdown-items">
+                            <a id="profile">My Profile</a>
+                        </div>
+                        <div class="dropdown-items logout" id="logout">
+                            <input type="submit" id="login" value="Logout" id="logout-btn">
+                        </div>
+                    </ul>
+                </li>
+                <li class="li"><a class="a" id="cart" href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+
+            <div>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </nav>
+
+
+        <div class="form">
+
+
+            <div class="heading">
+                <h1>Add Product</h1>
+            </div>
+            <form id="addproduct-form">
+                <div class="field">
+                    <label class="label">
+                        <p>Category :</p>     
+                        <label>
+                            Pearl bages
+                            <input type="checkbox" value="Pearl" name="box" id="category">
+                        </label>
+                        <label>
+                            Crystal bages
+                            <input type="checkbox" value="Crystal" name="box" id="category">
+                        </label>
+
+                    </label>
+                    
+                    <input type="text" id="p-name" placeholder="name" required>
+                    <input type="text" id="p-description" placeholder="description" required>
+                    <input type="number" id="price" placeholder="price" required>
+                    <input type="file" accept="jpg, png, jpeg" id="image" multiple required>
+                    <input type="submit" value="Add" id="submitbtn">
+
+
+                </div>
+            </form>
+
+
+
+        </div>
+
+    </div>
+
+<script src="spinner.js"></script>
+    <script type="module" src="firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="module" src="addproduct.js"></script>
+    <script type="module" src="header.js"></script>
+    <script></script>
+</body>
+
+</html>
